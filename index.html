@@ -3,7 +3,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>每日财经要闻</title><meta name="description" content="按日期整理的A股、港股、美股影响股价的新闻，按板块分类、按优先级排序。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231f3864'/><path d='M7 22l6-7 5 4 7-9' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
-<link rel="stylesheet" href="style.css?v=mwiw4qzy">
+<link rel="stylesheet" href="style.css?v=mwiwculs">
 </head><body><header class="top"><a class="brand" href="index.html"><span class="logo"></span>每日财经要闻</a>
 <span class="tag">影响股价的新闻 · 按板块分类 · 按优先级排序</span></header>
 <main class="wrap">
@@ -77,7 +77,7 @@
 let idx=null;const q=document.getElementById('q'),qn=document.getElementById('qn');
 q.addEventListener('input',async()=>{
   const v=q.value.trim().toLowerCase();
-  if(v&&!idx){try{idx=await (await fetch('search.json?v=mwiw4qzy')).json();}catch(e){idx=[];}}
+  if(v&&!idx){try{idx=await (await fetch('search.json?v=mwiwculs')).json();}catch(e){idx=[];}}
   const hit=v?new Set(idx.filter(x=>x.t.toLowerCase().includes(v)).map(x=>x.d)):null;
   let n=0;document.querySelectorAll('.card').forEach(c=>{const ok=!hit||hit.has(c.dataset.d);c.hidden=!ok;if(ok)n++;});
   document.querySelectorAll('.month').forEach(h=>{const g=h.nextElementSibling;h.hidden=g.hidden=!g.querySelector('.card:not([hidden])');});

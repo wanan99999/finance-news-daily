@@ -54,7 +54,7 @@ ${rows.map(([p, time, news, impact]) => `<div class="row p${p}">
 
   const html = head(`${cnDate(D.date)} 财经要闻`, D.conclusions.map((c) => c[0]).join(' '), '../') + topbar('../') + `
 <main class="wrap">
-${nav}
+<a class="back" href="../index.html">‹ 返回全部日期</a>
 <h1>${cnDate(D.date)}<span class="wd">${weekday(D.date)}</span></h1>
 <p class="meta">${esc(D.source)}</p>
 <div class="actions"><a class="btn" href="../docx/${D.date}.docx" download>下载 Word</a>
