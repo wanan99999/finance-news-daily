@@ -122,6 +122,8 @@ const searchIndex = days.map((D) => ({
 }));
 fs.writeFileSync(path.join(OUT, 'search.json'), JSON.stringify(searchIndex));
 fs.writeFileSync(path.join(OUT, 'days.json'), JSON.stringify(days.map((D) => ({ date: D.date }))));  // 供收盘复盘网站互跳时查询
+// 供「市场看板」小程序首页使用：每期的前三条结论标题 + 优先级条数
+fs.writeFileSync(path.join(OUT, 'index.json'), JSON.stringify(days.map((D) => ({ date: D.date, concl: D.conclusions.slice(0, 3).map((x) => trimColon(x[0])), c: countsOf(D) }))));
 
 const latest = days[days.length - 1], lc = countsOf(latest), lt = lc.H + lc.M + lc.L;
 const card = (D) => { const c = countsOf(D);

@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231f3864'/><path d='M7 22l6-7 5 4 7-9' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
-<link rel="stylesheet" href="style.css?v=mwljo8js">
+<link rel="stylesheet" href="style.css?v=mwloi7dq">
 </head><body><header class="top"><div class="top-in"><a class="brand" href="index.html"><span class="logo"></span>每日财经要闻</a>
 <span class="tag">影响股价的新闻 · 按板块分类 · 按优先级排序</span><a class="xsite" href="https://wanan99999.github.io/market-review/"><span class="xs-k">收盘复盘</span><span class="xs-a" aria-hidden="true">›</span></a></div></header>
 <main class="wrap">
@@ -135,7 +135,7 @@ function apply(hit){
 bs.forEach(b=>b.onclick=()=>month(b.dataset.m,true));
 q.addEventListener('input',async()=>{const v=q.value.trim().toLowerCase();
   if(!v){apply();return;}
-  if(!idx){try{idx=await (await fetch('search.json?v=mwljo8js')).json();}catch(e){idx=[];}}
+  if(!idx){try{idx=await (await fetch('search.json?v=mwloi7dq')).json();}catch(e){idx=[];}}
   apply(new Set(idx.filter(x=>x.t.toLowerCase().includes(v)).map(x=>x.d)));});
 const h=location.hash.match(/^#m-([0-9]{4}-[0-9]{2})$/);if(h)month(h[1],false);
 })();
